@@ -22,7 +22,7 @@ function toggleContacts() {
         }
 
         for(i=0; i<hamburguerDivs.length; i++ ) {
-            hamburguerDivs[i].style.transform = 'translateX(-4rem)';
+            hamburguerDivs[i].style.transform = 'translateX(-4rem) scale(0)';
         }
         setTimeout(() => {
             fixedDot.style.transform = 'scale(2)'
@@ -40,7 +40,7 @@ function toggleContacts() {
         fixedDot.style.transform = 'scale(1)'
 
         for(i=0; i<hamburguerDivs.length; i++ ) {
-            hamburguerDivs[i].style.transform = 'translateX(0rem)';
+            hamburguerDivs[i].style.transform = 'translateX(0rem) scale(1)';
         }
 
     }

@@ -95,19 +95,19 @@
     <nav>
         <div id="hamburguer">
             <div>
-                <div style="transition-delay: 0.05s;"></div>
-                <div style="transition-delay: 0.1s;"></div>
-                <div style="transition-delay: 0.15s;"></div>
-            </div>
-            <div>
                 <div style="transition-delay: 0.4s;"></div>
-                <div id="fixed_dot"></div>
-                <div style="transition-delay: 0.2s;"></div>
-            </div>
-            <div>
                 <div style="transition-delay: 0.35s;"></div>
                 <div style="transition-delay: 0.3s;"></div>
+            </div>
+            <div>
+                <div style="transition-delay: 0.05s;"></div>
+                <div id="fixed_dot"></div>
                 <div style="transition-delay: 0.25s;"></div>
+            </div>
+            <div>
+                <div style="transition-delay: 0.1s;"></div>
+                <div style="transition-delay: 0.15s;"></div>
+                <div style="transition-delay: 0.2s;"></div>
             </div>
         </div>
 
@@ -134,36 +134,44 @@
     </nav>
 
     <main>
-        <h1>
-            André Ciappina
-            <span>24 years old guy from <b>São Paulo - Brazil</b></span>
-        </h1>
-        
-        <img id="my_photo" src="assets/myself.png" alt="Photo">
-        
-        <h2>Currently working at <a href="https://simpleads.com.br" target="_blank">SimpleAds</a> with <strong>display and rich media advertising design</strong> for thousands of websites across Brazil.</h2>
-
-        <h3>In the past years I've worked with <strong>UI design</strong>, <strong>front end web development</strong> and <strong>photographic retouching</strong>.</h3>
+        <div id="grid_ctnr">
+            <h1>
+                André Ciappina
+                <span>24 years old guy from <b>São Paulo - Brazil</b></span>
+            </h1>
+            
+            <img id="my_photo" src="assets/myself.png" alt="Photo">
+            
+            <h2>Currently working at <a href="https://simpleads.com.br" target="_blank">SimpleAds</a> with <strong>display and rich media advertising design</strong> for thousands of websites across Brazil.</h2>
+    
+            <h3>In the past years I've worked with <strong>UI design</strong>, <strong>front end web development</strong> and <strong>photographic retouching</strong>.</h3>
+        </div>
 
         <div class="vert_line"></div>
 
 
         <h3 class="title">Things I've done</h3>
 
-        <a class="post" href="#">
+        <article class="post" href="#">
             <img src="assets/posts/simpleads_cover.jpg" alt="">
-            <h4>The things I've done at SimpleAds</h4>
-        </a>
+            <time>2019 - NOW</time>
+            <h4>My work at SimpleAds</h4>
+            <p><b>SimpleAds is an adserver</b> which offers different solutions for advertisers and publishers. My job there is to give creative support to advertisers, making various sizes and interactive ads. <b>I have worked for Ubisoft, Disney, Warner, Sony and many other clients</b>.</p>
 
-        <a class="post" href="#">
-            <img src="assets/posts/simpleads_cover.jpg" alt="">
-            <h4>The things I've done at SimpleAds</h4>
-        </a>
+            <a href="/simpleads.html">Have a look</a>
+        </article>
 
-        <a class="post" href="#">
+        <article class="post" href="#">
             <img src="assets/posts/simpleads_cover.jpg" alt="">
             <h4>The things I've done at SimpleAds</h4>
-        </a>
+        </article>
+
+        <article class="post" href="#">
+            <img src="assets/posts/simpleads_cover.jpg" alt="">
+            <h4>The things I've done at SimpleAds</h4>
+        </article>
     </main>
+
+    <div id="noise"></div>
 </body>
 </html>

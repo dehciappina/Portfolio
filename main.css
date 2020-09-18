@@ -24,7 +24,7 @@ a {
     text-decoration: none;
     background: #222;
 } a:not(.contact_bt):visited {
-    background: #000;
+    background: #010101;
 } h2 a, p a {
     padding: 0 5px;
 }
@@ -199,32 +199,66 @@ nav {
 .title {
     font-size: 2.4rem;
     font-weight: 500;
+    margin-bottom: 2rem;
 }
 
 .post {
     display: block;
-    width: 80%;
-    margin: 0 auto 4rem auto;
-    background: #16161C;
+    padding: 0 2.5rem;
+    box-sizing: border-box;
+    margin: 0 0 7rem 0;
     position: relative;
 } .post:not(:last-child)::after {
     content: '';
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -2.5rem;
+    bottom: -4.5rem;
     width: 1px;
-    height: 1rem;
+    height: 2rem;
     border-right: 1px solid white;
     margin: 0 auto;
 } .post img {
     width: 100%;
 } .post h4 {
-    font-size: 2rem;
-    padding: 1rem;
+    font-size: 2.3rem;
+    margin: 0 0 0.8rem 0;
+} .post p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    text-align: justify;
+} .post a {
+    line-height: 3.5rem;
+    margin: 1.4rem 0 0 0;
+    width: 100%;
+    display: block;
+    font-size: 1.8rem;
+    text-align: center;
+    background: #0D0D12;
+    border-radius: 0.4rem;
+    box-shadow: 0.3rem 0.3rem 0.7rem #000004, -0.3rem -0.3rem 0.7rem #232327;
+} time {
+    display: block;
+    margin: 1.2rem 0 -0.2rem 0;
+    font-size: 0.9rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.3rem;
 }
 
-
+#noise {
+    background-image: url(assets/noise.gif);
+    background-attachment: fixed;
+    mix-blend-mode: lighten;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0.3;
+    pointer-events: none;
+}
 
 
 
@@ -266,12 +300,17 @@ nav {
         left: 3vw;
     }
 
-    #my_photo {
-        position: absolute;
-        right: 0;
-        width: calc(10rem + 40vw);
-        top: 0;
+    #grid_ctnr {
+        
     }
+
+    /* #my_photo {
+        position: absolute;
+        right: 20vw;
+        width: unset;
+        top: 0;
+        margin: 0;
+    } */
 
     .post {
         width: 60%;
