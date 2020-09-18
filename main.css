@@ -1,0 +1,185 @@
+html {
+    font-size:14px;
+}
+
+body, html {
+    margin:0;
+}
+
+body {
+    padding-top: 5.5rem;
+    background-color: #0F0F13;
+    font-family: 'Crimson Pro', serif;
+    /* font-family: 'Poppins', sans-serif; */
+    color:#d8d8dd;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    margin:unset;
+    font-weight: 100;
+}
+
+a {
+    color: #d8d8dd;
+    text-decoration: none;
+    background: #222;
+} a:visited {
+    background: #000;
+} h2 a, p a {
+    padding: 0 5px;
+}
+
+strong, b {
+    color: #fff;
+    font-weight: 100;
+}
+
+h2, h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 100;
+    padding: 0 2rem;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 4rem;
+    background-color: #16161C;
+    box-shadow: 0 0 4rem 1rem #0F0F13;
+} #logo {
+    height: 62%;
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+} .logo_polygon {
+    fill:none;stroke:#d8d8dd;stroke-width:30;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;
+}
+
+#lang {
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0.8rem;
+    padding: 0.4rem 0.6rem;
+}
+
+h1 {
+    font-size: 3.6rem;
+    text-align: center;
+    margin-bottom: 2rem;
+} h1 span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.15rem;
+    display: block;
+}
+
+#my_photo {
+    width: 80%;
+    height: 20rem;
+    background: rgba(255,255,255,0.05);
+    display: block;
+    margin: 0 auto 1.5rem auto;
+}
+
+#hamburguer {
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+} #hamburguer div {
+    width: 100%;
+    border-radius: 1rem;
+    background-color: white;
+    height: 0.3rem;
+    transform-origin: left;
+    position: relative;
+    transition: transform 0.8s ease, width 0.4s ease;
+} #hamburguer div:nth-child(2) {
+    margin: 0.4rem 0;
+} .hamburguer_top_arrow {
+    transform: rotate(-45deg) translate(-0.6rem, 0.5rem);
+    width: 50% !important;
+} .hamburguer_bottom_arrow {
+    transform: rotate(45deg) translate(-0.6rem, -0.5rem);
+    width: 50% !important;
+} 
+
+nav {
+    right: 2rem;
+    bottom: 2rem;
+    transition: box-shadow 0.4s cubic-bezier(0, 0, 0.2, 1);
+    z-index: 1;
+} .pressed_nav, .contact_bt:hover {
+    box-shadow: -0.3rem -0.3rem 0.7rem #000004, 0.3rem 0.3rem 0.7rem #232327;
+} nav, nav .contact_bt {
+    position: fixed;
+    bottom: 2rem;
+    width: 4rem;
+    height: 4rem;
+    background: #0F0F13;
+    border-radius: 0.4rem;
+    box-shadow: 0.3rem 0.3rem 0.7rem #000004, -0.3rem -0.3rem 0.7rem #232327;
+} nav svg {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    top: 25%;
+} .nav_svg{
+    fill:none;stroke:#D8D8DD;stroke-width:40;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;
+} .contact_bt path {
+    fill:#D8D8DD;
+}
+
+#whats_bt {
+    right: 8rem;
+    transition-delay: 0.15s;
+} #linkedin_bt {
+    right: 14rem;
+    transition-delay: 0.3s;
+} #email_bt {
+    right: 20rem;
+    transition-delay: 0.45s;
+}
+
+.contact_bt {
+    opacity:0;
+    transform:scale(0.9);
+    transition:opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vert_line {
+    width: 1px;
+    height: 6rem;
+    border-right: 1px solid white;
+    margin: 2rem auto;
+}
+
+.post {
+    display: block;
+    width: 80%;
+    margin: 0 auto 4rem auto;
+    background: #16161C;
+    position: relative;
+} .post::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2.5rem;
+    width: 1px;
+    height: 1rem;
+    border-right: 1px solid white;
+    margin: 0 auto;
+} .post img {
+    width: 100%;
+} .post h4 {
+    font-size: 2rem;
+    padding: 1rem;
+}
