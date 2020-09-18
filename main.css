@@ -7,8 +7,8 @@ body, html {
 }
 
 body {
-    padding-top: 5.5rem;
-    background-color: #0F0F13;
+    padding-top: 1rem;
+    background-color: #0D0D12;
     font-family: 'Crimson Pro', serif;
     /* font-family: 'Poppins', sans-serif; */
     color:#d8d8dd;
@@ -23,7 +23,7 @@ a {
     color: #d8d8dd;
     text-decoration: none;
     background: #222;
-} a:visited {
+} a:not(.contact_bt):visited {
     background: #000;
 } h2 a, p a {
     padding: 0 5px;
@@ -43,13 +43,13 @@ h2, h3 {
 }
 
 header {
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 1;
     width: 100%;
     height: 4rem;
-    background-color: #16161C;
-    box-shadow: 0 0 4rem 1rem #0F0F13;
+    background-color: #0D0D12;
+    box-shadow: 0 0 4rem 1rem #0D0D12;
 } #logo {
     height: 62%;
     width: 100%;
@@ -62,11 +62,15 @@ header {
 
 #lang {
     font-family: 'Poppins', sans-serif;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0.8rem;
-    padding: 0.4rem 0.6rem;
+    position: fixed;
+    top: 0.9rem;
+    right: 3vw;
+    padding: 0.3rem 0.5rem;
+    background: #000;
+}
+
+main {
+    position: relative;
 }
 
 h1 {
@@ -82,48 +86,49 @@ h1 {
 #my_photo {
     width: 80%;
     height: 20rem;
-    background: rgba(255,255,255,0.05);
     display: block;
     margin: 0 auto 1.5rem auto;
+    object-fit: contain;
 }
 
 #hamburguer {
-    width: 50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24%;
+    box-sizing: border-box;
     margin: 0 auto;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-} #hamburguer div {
-    width: 100%;
-    border-radius: 1rem;
-    background-color: white;
+    overflow: hidden;
+} #hamburguer > div {
+    display: flex;
+    justify-content: space-between;
+} #hamburguer div div {
+    width: 0.3rem;
     height: 0.3rem;
-    transform-origin: left;
-    position: relative;
-    transition: transform 0.8s ease, width 0.4s ease;
-} #hamburguer div:nth-child(2) {
+    background: white;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+} #hamburguer > div:nth-child(2) {
     margin: 0.4rem 0;
-} .hamburguer_top_arrow {
-    transform: rotate(-45deg) translate(-0.6rem, 0.5rem);
-    width: 50% !important;
-} .hamburguer_bottom_arrow {
-    transform: rotate(45deg) translate(-0.6rem, -0.5rem);
-    width: 50% !important;
-} 
+}
 
 nav {
     right: 2rem;
     bottom: 2rem;
-    transition: box-shadow 0.4s cubic-bezier(0, 0, 0.2, 1);
+    transition: box-shadow 0.4s ease-out;
     z-index: 1;
 } .pressed_nav, .contact_bt:hover {
     box-shadow: -0.3rem -0.3rem 0.7rem #000004, 0.3rem 0.3rem 0.7rem #232327;
-} nav, nav .contact_bt {
+} nav, .contact_bt {
     position: fixed;
     bottom: 2rem;
     width: 4rem;
     height: 4rem;
-    background: #0F0F13;
+    background: #0D0D12;
     border-radius: 0.4rem;
     box-shadow: 0.3rem 0.3rem 0.7rem #000004, -0.3rem -0.3rem 0.7rem #232327;
 } nav svg {
@@ -134,6 +139,8 @@ nav {
 } .nav_svg{
     fill:none;stroke:#D8D8DD;stroke-width:40;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;
 } .contact_bt path {
+    fill:#D8D8DD;
+} .circle{
     fill:#D8D8DD;
 }
 
@@ -150,8 +157,36 @@ nav {
 
 .contact_bt {
     opacity:0;
-    transform:scale(0.9);
+    transform:scale(0.6);
+    transform-origin: center right;
     transition:opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#animation_bg {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50rem;
+}
+
+#circles {
+    position: absolute;
+    opacity: 0.1;
+    top: 8rem;
+    left: -11rem;
+    width: 18rem;
+    animation: circle_rotation 40s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+}
+
+@keyframes circle_rotation {
+    0% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .vert_line {
@@ -161,13 +196,18 @@ nav {
     margin: 2rem auto;
 }
 
+.title {
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
 .post {
     display: block;
     width: 80%;
     margin: 0 auto 4rem auto;
     background: #16161C;
     position: relative;
-} .post::after {
+} .post:not(:last-child)::after {
     content: '';
     position: absolute;
     left: 0;
@@ -182,4 +222,64 @@ nav {
 } .post h4 {
     font-size: 2rem;
     padding: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-height:600px) and (min-width:100vh) {
+    
+    html {
+        font-size: 16px;
+    }
+
+    #logo {
+        width: auto;
+        left: 3vw;
+    }
+
+    #my_photo {
+        position: absolute;
+        right: 0;
+        width: calc(10rem + 40vw);
+        top: 0;
+    }
+
+    .post {
+        width: 60%;
+        max-width: 50rem;    
+    } .post:nth-child(even) {
+        margin:0 0 0 auto;
+    } .post:nth-child(odd) {
+        margin:0 auto 0 0;
+    }
+
 }

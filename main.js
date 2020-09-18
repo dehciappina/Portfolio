@@ -1,8 +1,8 @@
 const hamburguer = document.querySelector('#hamburguer');
-const hamburguerDiv1 = document.querySelector('#hamburguer div:first-child');
-const hamburguerDiv3 = document.querySelector('#hamburguer div:last-child');
+const hamburguerDivs = document.querySelectorAll('#hamburguer div div:not(#fixed_dot)');
 const nav = document.querySelector('nav');
 const navBts = document.querySelectorAll('.contact_bt');
+const fixedDot = document.querySelector('#fixed_dot')
 const navBtsSVG = document.querySelectorAll('.contact_bt svg');
 
 let showingContacts = false;
@@ -15,23 +15,33 @@ function toggleContacts() {
     if(showingContacts == false) {
         showingContacts = true;
         nav.classList.toggle('pressed_nav')
-        hamburguerDiv1.classList.toggle('hamburguer_top_arrow')
-        hamburguerDiv3.classList.toggle('hamburguer_bottom_arrow')
 
         for(i=0; i<navBts.length; i++ ) {
-                    navBts[i].style.opacity = 1;
-                    navBts[i].style.transform = 'scale(1)';
+            navBts[i].style.opacity = 1;
+            navBts[i].style.transform = 'scale(1)';
         }
+
+        for(i=0; i<hamburguerDivs.length; i++ ) {
+            hamburguerDivs[i].style.transform = 'translateX(-4rem)';
+        }
+        setTimeout(() => {
+            fixedDot.style.transform = 'scale(2)'
+        }, 400);
 
     } else {
         showingContacts = false;
         nav.classList.toggle('pressed_nav')
-        hamburguerDiv1.classList.toggle('hamburguer_top_arrow')
-        hamburguerDiv3.classList.toggle('hamburguer_bottom_arrow')
 
         for(i=0; i<navBts.length; i++ ) {
-                    navBts[i].style.opacity = 0;
-                    navBts[i].style.transform = 'scale(0.9)';
+            navBts[i].style.opacity = 0;
+            navBts[i].style.transform = 'scale(0.9)';
         }
+
+        fixedDot.style.transform = 'scale(1)'
+
+        for(i=0; i<hamburguerDivs.length; i++ ) {
+            hamburguerDivs[i].style.transform = 'translateX(0rem)';
+        }
+
     }
 }
