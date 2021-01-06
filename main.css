@@ -13,6 +13,7 @@ body, html {
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
     letter-spacing: 0.1rem;
+    scroll-behavior: smooth;
 }
 
 
@@ -54,25 +55,24 @@ a {
 
 #language {
     position: fixed;
-    top: 0;
-    left: 0;
+    display: block;
     color: #f8f8ff;
     background-color: var(--color-2);
     z-index: 10;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.3rem;
-    right: 77%;
-    display: flex;
-    justify-content: center;
-    padding: 1.5rem 0 0.5rem 0;
+    width: 20%;
+    padding: 1rem 0 0.5rem 0;
+    margin: 0 auto;
+    text-align: center;
 }
 
 #top_bts {
     position: absolute;
     top: 0.2rem;
-    left: 23.6vw;
+    left: 20vw;
     right: 0;
-    color: var(--color-2);
+    color: var(--color-text);
     font-weight: 600;
     font-size: 1rem;
     letter-spacing: 0.1rem;
@@ -82,49 +82,59 @@ a {
 }
 
 #left_panel {
-    background-color: var(--color-2);
+    border-right: 0.1rem solid var(--color-2);
+    background-color: unset;
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
-    right: 76.4%;
+    right: 80%;
 }
 
 
 
 #right_bottom_panel {
     background-color: var(--color-3);
+    mix-blend-mode: color-burn;
     position: fixed;
     right:0;
     bottom:0;
     top:85.4%;
-    left:23.6%;
+    left:20%;
     z-index: 9;
     display: flex;
     justify-content: center;
     align-items: center;
-} #right_bottom_panel a {
-    position: absolute;
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 1.4rem;
+    font-weight: 600;
     letter-spacing: 0.1rem;
 }
 
-#intro_flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: clamp(60vh, 80vh, 31rem);
-    margin-bottom: calc(90vh - 38rem);
-} #intro_flex > *:not(.intro_padding_line), .post {
-    padding: 0 1.4rem;
+#intro_flex > * {
+    padding: 0 5vw;
+    margin-bottom: 2vh;
+}
+
+#indicator {
+    margin-top: 2rem;
+}
+
+.post {
+    padding: 2rem 5vw;
+} .post a {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 1.5rem 0 0 0;
 }
 
 .intro_padding_line {
     position: relative;
-    border-top: 0.15rem solid var(--color-2);
-} .post_line {
-    margin: 2rem 0;
+    border-top: 0.1rem solid var(--color-2);
+} .padding_line {
+    position: relative;
+    border-top: 0.1rem solid var(--color-2);
+    z-index: -1;
 }
 
 #hi {
@@ -133,10 +143,10 @@ a {
     font-weight: 700;
     font-size: clamp(1rem, 3rem, 13vw);
     left: 0;
-    right: 76.4%;
+    right: 80%;
     margin-top: 5rem;
     text-align: right;
-    padding-right: 0.5rem;
+    padding-right: 0.4rem;
     line-height: 3.3rem;
 } #im_andre {
     font-size: clamp(1rem, 3rem, 13vw);
@@ -160,7 +170,7 @@ a {
 }
 
 main {
-    margin-left: 23.6%;
+    margin-left: 20%;
     padding-top: 5rem;
     padding-bottom: 20rem;
 }
@@ -171,46 +181,14 @@ p {
     font-weight: 400;
 }
 
-#bts {
-    position: sticky;
-    top: 5rem;
-    bottom: -25rem;
-    margin-bottom: calc(-110vh + 22rem);
-    margin-left: -23.6vw;
-    width: 23.6vw;
-    display: flex;
-    z-index: 10;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-} #bts > * {
-    width: 3.2rem;
-    height: 3.2rem;
-    background-color: #f8f8ff;
-    position: relative;
-    display: block;
-    border-radius: 50%;
-    margin: 2.5vh 0;
-} #bts svg {
-    fill: var(--color-2);
-    width: 70%;
-    height: 70%;
-    display: block;
-    margin: 0 auto;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-} #bts > *:first-child {
-    z-index: 2;
-}
 
 time {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 500;
     font-style: italic;
 } .post h2 {
-    margin: 1rem 0;
-    font-size: 2.4rem;
+    margin: 0.6rem 0 1rem 0;
+    font-size: 2rem;
     font-weight: 400;
     letter-spacing: 0.1rem;
 } h2 strong, h2 b {
@@ -220,16 +198,6 @@ time {
 } p strong, p b {
 
 }
-
-.post_a {
-    display: inline-block;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-top: auto;
-    letter-spacing: 0.1rem;
-}
-
-
 
 
 
@@ -241,18 +209,30 @@ time {
 
 /* @media (prefers-color-scheme: dark) {
     :root {
-        --color-1:#191A2F;
+        --color-1:#140B30;
         --color-text:#f8f8ff;
     }
 
     #right_bottom_panel {
-        background-color: var(--color-3);
+        mix-blend-mode: difference;
     }
 
     #indicator div {
         border-left: 0.3rem solid;
         border-bottom: 0.3rem solid;
     }
+
+    #top_bts {
+        font-weight: 400;
+    }
+
+    .intro_padding_line {
+        position: relative;
+        border-top: 0.05rem solid var(--color-2);
+    } .padding_line {
+        border-top: 0.1rem solid var(--color-2);
+    }
+
 } */
 
 
@@ -340,10 +320,22 @@ time {
     
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 @media (min-height:200vw) {
 
-    p {
-        font-size: calc(4vw + 0.2rem);
-        line-height: 1.8rem;
+    #intro_flex > * {
+        padding: 0 7.5vw;
     }
+
 }
