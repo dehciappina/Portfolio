@@ -12,22 +12,9 @@ body, html {
     font-family: 'Roboto', sans-serif;
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.05rem;
     scroll-behavior: smooth;
 }
-
-
-
-[aos="fade"] {
-    opacity: 0;
-    transition-property: opacity;
-  }
-  
-  [aos="fade"].aos-animate {
-    opacity: 1;
-  }
-
-
 
 
 html {
@@ -54,16 +41,16 @@ a {
 }
 
 #language {
-    position: fixed;
+    position: sticky;
+    top: -2rem;
     display: block;
     color: #f8f8ff;
     background-color: var(--color-2);
     z-index: 10;
-    font-weight: 600;
-    font-size: 1.3rem;
+    font-weight: 700;
+    font-size: 1rem;
     width: 20%;
-    padding: 1rem 0 0.5rem 0;
-    margin: 0 auto;
+    padding: 2.5rem 0 0.5rem 0;
     text-align: center;
 }
 
@@ -85,13 +72,12 @@ a {
     border-right: 0.1rem solid var(--color-2);
     background-color: unset;
     position: fixed;
-    top: 0;
+    /* top: 0; */
     left: 0;
-    bottom: 0;
+    bottom: 14.6%;
     right: 80%;
+    height: 100%;
 }
-
-
 
 #right_bottom_panel {
     background-color: var(--color-3);
@@ -99,8 +85,9 @@ a {
     position: fixed;
     right:0;
     bottom:0;
-    top:85.4%;
-    left:20%;
+    /* top:85.4%; */
+    height: 14.6%;
+    left: calc(20% - 0.15rem);
     z-index: 9;
     display: flex;
     justify-content: center;
@@ -108,6 +95,7 @@ a {
     font-size: 1.4rem;
     font-weight: 600;
     letter-spacing: 0.1rem;
+    pointer-events: none;
 }
 
 #intro_flex > * {
@@ -117,6 +105,13 @@ a {
 
 #indicator {
     margin-top: 2rem;
+} #indicator div {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-left: 0.3rem solid;
+    border-bottom: 0.3rem solid;
+    transform: rotate(-45deg) translateX(0.5rem);
+    margin-top: 0.9rem;
 }
 
 .post {
@@ -138,13 +133,13 @@ a {
 }
 
 #hi {
-    color: #f8f8ff;
+    color: var(--color-text);
     position: absolute;
     font-weight: 700;
     font-size: clamp(1rem, 3rem, 13vw);
     left: 0;
     right: 80%;
-    margin-top: 5rem;
+    margin-top: 3rem;
     text-align: right;
     padding-right: 0.4rem;
     line-height: 3.3rem;
@@ -160,18 +155,10 @@ a {
     margin-top: 0.5rem;
 }
 
-#indicator div {
-    width: 0.6rem;
-    height: 0.6rem;
-    border-left: 0.35rem solid;
-    border-bottom: 0.35rem solid;
-    transform: rotate(-45deg) translateX(0.5rem);
-    margin-top: 0.9rem;
-}
 
 main {
     margin-left: 20%;
-    padding-top: 5rem;
+    padding-top: 3rem;
     padding-bottom: 20rem;
 }
 
@@ -188,7 +175,7 @@ time {
     font-style: italic;
 } .post h2 {
     margin: 0.6rem 0 1rem 0;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 400;
     letter-spacing: 0.1rem;
 } h2 strong, h2 b {
@@ -199,6 +186,30 @@ time {
 
 }
 
+#bts_container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 80%;
+    height: 14.6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} #hamburger {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+} #hamburger > div {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} #hamburger > div > div {
+    background: var(--color-2);
+    height: 20%;
+}
 
 
 
@@ -230,7 +241,7 @@ time {
         position: relative;
         border-top: 0.05rem solid var(--color-2);
     } .padding_line {
-        border-top: 0.1rem solid var(--color-2);
+        border-top: 0.15rem solid var(--color-2);
     }
 
 } */
@@ -333,9 +344,5 @@ time {
 
 
 @media (min-height:200vw) {
-
-    #intro_flex > * {
-        padding: 0 7.5vw;
-    }
 
 }
