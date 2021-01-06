@@ -20,6 +20,6 @@ ScrollReveal().reveal('.post_line', {
     elements: {},
     origin: 'left',
     viewOffset: {
-        bottom: window.innerHeight/4,
+        bottom: window.innerHeight/7,
     },
 })

@@ -12,7 +12,6 @@ body, html {
     font-family: 'Roboto', sans-serif;
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
-    letter-spacing: 0.05rem;
     scroll-behavior: smooth;
 }
 
@@ -40,30 +39,30 @@ a {
     text-decoration: none;
 }
 
-#language {
+header {
     position: sticky;
-    top: -2rem;
+    top: -1.5rem;
+    font-size: 0.9rem;
+    z-index: 2;
+} #language {
     display: block;
     color: #f8f8ff;
     background-color: var(--color-2);
     z-index: 10;
     font-weight: 700;
-    font-size: 1rem;
     width: 20%;
-    padding: 2.5rem 0 0.5rem 0;
+    padding: 2.5rem 0 1rem 0;
     text-align: center;
-}
-
-#top_bts {
+} #top_bts {
     position: absolute;
-    top: 0.2rem;
+    top: 0;
     left: 20vw;
     right: 0;
     color: var(--color-text);
     font-weight: 600;
-    font-size: 1rem;
     letter-spacing: 0.1rem;
-    padding: 1.5rem 1rem 0.5rem 1.4rem;
+    padding: 2.5rem 1rem 1rem 1.4rem;
+    background-color: var(--color-1);
 } #top_bts a:first-child {
     margin-right: 4vw;
 }
@@ -74,18 +73,18 @@ a {
     position: fixed;
     /* top: 0; */
     left: 0;
-    bottom: 14.6%;
+    bottom: 0;
     right: 80%;
     height: 100%;
 }
 
-#right_bottom_panel {
+/* #right_bottom_panel {
     background-color: var(--color-3);
     mix-blend-mode: color-burn;
     position: fixed;
     right:0;
     bottom:0;
-    /* top:85.4%; */
+    top:85.4%;
     height: 14.6%;
     left: calc(20% - 0.15rem);
     z-index: 9;
@@ -96,7 +95,7 @@ a {
     font-weight: 600;
     letter-spacing: 0.1rem;
     pointer-events: none;
-}
+} */
 
 #intro_flex > * {
     padding: 0 5vw;
@@ -127,9 +126,10 @@ a {
     position: relative;
     border-top: 0.1rem solid var(--color-2);
 } .padding_line {
-    position: relative;
+    position: sticky;
+    top: 2.9rem;
     border-top: 0.1rem solid var(--color-2);
-    z-index: -1;
+    z-index: 2;
 }
 
 #hi {
@@ -141,18 +141,23 @@ a {
     right: 80%;
     margin-top: 3rem;
     text-align: right;
-    padding-right: 0.4rem;
+    padding-right: 2vw;
     line-height: 3.3rem;
 } #im_andre {
     font-size: clamp(1rem, 3rem, 13vw);
     font-weight: 700;
     line-height: 3.3rem;
-    display: flex;
-    flex-direction: column;
+    display: block;
     position: relative;
 } #im_andre p {
     font-weight: 500;
     margin-top: 0.5rem;
+} #im_andre span {
+    position: absolute;
+    right: 4rem;
+    top: 1.5rem;
+    color: var(--color-2);
+    font-size: 4.5rem;
 }
 
 
@@ -191,7 +196,8 @@ time {
     bottom: 0;
     left: 0;
     right: 80%;
-    height: 14.6%;
+    height: 20vw;
+    background-color: var(--color-2);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -207,7 +213,7 @@ time {
     flex-direction: column;
     justify-content: space-between;
 } #hamburger > div > div {
-    background: var(--color-2);
+    background: var(--color-1);
     height: 20%;
 }
 
@@ -218,9 +224,9 @@ time {
 
 
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     :root {
-        --color-1:#140B30;
+        --color-1: #0D0322;
         --color-text:#f8f8ff;
     }
 
@@ -234,17 +240,10 @@ time {
     }
 
     #top_bts {
-        font-weight: 400;
+        font-weight: 300;
     }
 
-    .intro_padding_line {
-        position: relative;
-        border-top: 0.05rem solid var(--color-2);
-    } .padding_line {
-        border-top: 0.15rem solid var(--color-2);
-    }
-
-} */
+}
 
 
 
