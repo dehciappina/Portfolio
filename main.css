@@ -1,10 +1,11 @@
 :root {
     --color-1:#f8f8ff;
-    --color-2:#6300ff;
+    --color-2:#5900FF;
     --color-text:#6300ff;
     --color-3:#fff619;
     --color-4:#5800e6;
     --color-5:#121221;
+    --empty-bt: #121221;
 }
 
 body, html {
@@ -116,10 +117,21 @@ header {
 .post {
     padding: 2rem 5vw;
 } .post a {
+    position: relative;
     display: inline-block;
     font-size: 1.5rem;
     font-weight: 500;
-    margin: 1.5rem 0 0 0;
+    margin: 0.5rem 0 0 -5vw;
+    padding-left: 5vw;
+    line-height: 2.5rem;
+} .post a::before {
+    content: '';
+    position: absolute;
+    left: -0.1rem;
+    top: 0;
+    bottom: 0;
+    width: 0.3rem;
+    background-color: var(--color-2);
 }
 
 .intro_padding_line {
@@ -197,24 +209,67 @@ time {
     left: 0;
     right: 80%;
     height: 20vw;
-    background-color: var(--color-2);
+    display: flex;
+    justify-content: center;
+} #bts_container svg {
+    width: 42%;
+    height: 42%;
+} #bts_container path {
+    fill:#f8f8ff;
+} #hamburger {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-} #hamburger {
+    z-index: 2;
+    background-color: var(--color-2);
+} #hamburger > div {
     width: 2.5rem;
     height: 2.5rem;
-    display: flex;
-    justify-content: space-between;
-} #hamburger > div {
-    height: 100%;
-    width: 20%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 } #hamburger > div > div {
-    background: var(--color-1);
     height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+} #hamburger > div > div > div {
+    width: 20%;
+    height: 100%;
+    background-color: #121221;
+    transition: background-color 0.4s ease;
+} .menu_bts {
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-2);
+    border-radius: 0.2rem;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+} .showing_bts {
+    transform: translateY(0) scale(0) !important;
+}
+
+#whats_bt {
+    transform: translateY(-170%) scale(1);
+    transition-delay: 0s;
+} #email_bt {
+    transform: translateY(-300%) scale(1);
+    transition-delay: 0.05s;
+} #github_bt {
+    transform: translateY(-430%) scale(1);
+    transition-delay: 0.1s;
+} #linkedin_bt {
+    transform: translateY(-560%) scale(1);
+    transition-delay: 0.15s;
+} #codepen_bt {
+    transform: translateY(-690%) scale(1);
+    transition-delay: 0.2s;
 }
 
 
@@ -224,9 +279,27 @@ time {
 
 
 
-@media (prefers-color-scheme: dark) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @media (prefers-color-scheme: dark) {
     :root {
-        --color-1: #0D0322;
+        --color-1: #0A0625;
         --color-text:#f8f8ff;
     }
 
@@ -243,7 +316,7 @@ time {
         font-weight: 300;
     }
 
-}
+} */
 
 
 
