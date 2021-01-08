@@ -42,7 +42,7 @@ hamburguer.addEventListener('click', checkBts)
 
 setTimeout(() => {
     hideBts()
-}, 1500);
+}, 1000);
 
 
 document.addEventListener('scroll', hideBts)
@@ -68,7 +68,7 @@ ScrollReveal().reveal('.post', {
 
 ScrollReveal().reveal('.post_line', {
     distance: window.innerWidth/5 + 'px',
-    duration: 600,
+    duration: 1000,
     reset: true,
     easing: 'ease',
     origin: 'left',
@@ -82,7 +82,7 @@ ScrollReveal().reveal('.post a', {
     duration: 1000,
     // reset: true,
     easing: 'ease',
-    origin: 'top',
+    origin: 'bottom',
     viewOffset: {
         bottom: window.innerHeight/8,
     },

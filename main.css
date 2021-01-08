@@ -10,9 +10,6 @@
 
 body, html {
     margin:0;
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 300;
     scroll-behavior: smooth;
 }
 
@@ -22,8 +19,12 @@ html {
 }
 
 body {
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
     background-color:var(--color-1);
     color:var(--color-text);
+    font-feature-settings: 'lnum' 1;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -62,10 +63,19 @@ header {
     color: var(--color-text);
     font-weight: 600;
     letter-spacing: 0.1rem;
-    padding: 2.5rem 1rem 1rem 1.4rem;
     background-color: var(--color-1);
+} #top_bts a {
+    padding: 2.5rem 1rem 1rem 1.4rem;
 } #top_bts a:first-child {
     margin-right: 4vw;
+}
+
+#about_me_window, #location_window {
+
+} #about_me_window {
+    
+} #location_window {
+
 }
 
 #left_panel {
@@ -78,6 +88,13 @@ header {
     right: 80%;
     height: 100%;
 }
+
+main {
+    margin-left: 20%;
+    padding-top: 2rem;
+    padding-bottom: 20rem;
+}
+
 
 /* #right_bottom_panel {
     background-color: var(--color-3);
@@ -151,7 +168,7 @@ header {
     font-size: clamp(1rem, 3rem, 13vw);
     left: 0;
     right: 80%;
-    margin-top: 3rem;
+    margin-top: 2rem;
     text-align: right;
     padding-right: 2vw;
     line-height: 3.3rem;
@@ -169,14 +186,7 @@ header {
     right: 4rem;
     top: 1.5rem;
     color: var(--color-2);
-    font-size: 4.5rem;
-}
-
-
-main {
-    margin-left: 20%;
-    padding-top: 3rem;
-    padding-bottom: 20rem;
+    font-size: 4rem;
 }
 
 p {
@@ -250,7 +260,7 @@ time {
     align-items: center;
     background-color: var(--color-2);
     border-radius: 0.2rem;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 } .showing_bts {
     transform: translateY(0) scale(0) !important;
 }
@@ -260,16 +270,16 @@ time {
     transition-delay: 0s;
 } #email_bt {
     transform: translateY(-300%) scale(1);
-    transition-delay: 0.05s;
+    transition-delay: 0.04s;
 } #github_bt {
     transform: translateY(-430%) scale(1);
-    transition-delay: 0.1s;
+    transition-delay: 0.08s;
 } #linkedin_bt {
     transform: translateY(-560%) scale(1);
-    transition-delay: 0.15s;
+    transition-delay: 0.12s;
 } #codepen_bt {
     transform: translateY(-690%) scale(1);
-    transition-delay: 0.2s;
+    transition-delay: 0.16s;
 }
 
 
@@ -297,7 +307,7 @@ time {
 
 
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     :root {
         --color-1: #0A0625;
         --color-text:#f8f8ff;
@@ -316,7 +326,7 @@ time {
         font-weight: 300;
     }
 
-} */
+}
 
 
 
