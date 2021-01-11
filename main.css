@@ -4,8 +4,7 @@
     --color-text:#6300ff;
     --color-3:#fff619;
     --color-4:#5800e6;
-    --color-5:#121221;
-    --empty-bt: #121221;
+    --color-5: #2700B5;
 }
 
 body, html {
@@ -64,10 +63,9 @@ header {
     font-weight: 600;
     letter-spacing: 0.1rem;
     background-color: var(--color-1);
+    padding: 2.5rem 0 1rem 0;
 } #top_bts a {
     padding: 2.5rem 1rem 1rem 1.4rem;
-} #top_bts a:first-child {
-    margin-right: 4vw;
 }
 
 #about_me_window, #location_window {
@@ -202,15 +200,13 @@ time {
     font-style: italic;
 } .post h2 {
     margin: 0.6rem 0 1rem 0;
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: 400;
     letter-spacing: 0.1rem;
 } h2 strong, h2 b {
     font-weight: 800;
 } .post p {
     margin-bottom: 1rem;
-} p strong, p b {
-
 }
 
 #bts_container {
@@ -248,11 +244,11 @@ time {
 } #hamburger > div > div > div {
     width: 20%;
     height: 100%;
-    background-color: #121221;
+    background-color: var(--color-5);
     transition: background-color 0.4s ease;
 } .menu_bts {
-    width: 70%;
-    height: 70%;
+    width: 65%;
+    height: 65%;
     position: absolute;
     bottom: 0;
     display: flex;
@@ -262,23 +258,24 @@ time {
     border-radius: 0.2rem;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 } .showing_bts {
-    transform: translateY(0) scale(0) !important;
+    transform: translateY(0) scale(-0.3) !important;
+    will-change: transform;
 }
 
 #whats_bt {
-    transform: translateY(-170%) scale(1);
+    transform: translateY(-180%) scale(1);
     transition-delay: 0s;
 } #email_bt {
-    transform: translateY(-300%) scale(1);
+    transform: translateY(-320%) scale(1);
     transition-delay: 0.04s;
 } #github_bt {
-    transform: translateY(-430%) scale(1);
+    transform: translateY(-460%) scale(1);
     transition-delay: 0.08s;
 } #linkedin_bt {
-    transform: translateY(-560%) scale(1);
+    transform: translateY(-600%) scale(1);
     transition-delay: 0.12s;
 } #codepen_bt {
-    transform: translateY(-690%) scale(1);
+    transform: translateY(-650%) scale(1);
     transition-delay: 0.16s;
 }
 
@@ -307,10 +304,11 @@ time {
 
 
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     :root {
         --color-1: #0A0625;
         --color-text:#f8f8ff;
+        --color-5: #121221;
     }
 
     #right_bottom_panel {
@@ -326,7 +324,7 @@ time {
         font-weight: 300;
     }
 
-}
+} */
 
 
 

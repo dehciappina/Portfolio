@@ -26,7 +26,7 @@ function checkBts() {
     } else {
 
         for(i=0;i<hamburguerDots.length;i++) {
-            hamburguerDots[i].style.backgroundColor = '#121221';
+            hamburguerDots[i].style.backgroundColor = 'var(--color-5)';
         }
         
         for(i=0;i<bts.length;i++) {
