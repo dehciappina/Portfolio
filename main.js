@@ -42,7 +42,7 @@ hamburguer.addEventListener('click', checkBts)
 
 setTimeout(() => {
     hideBts()
-}, 1000);
+}, 400);
 
 
 document.addEventListener('scroll', hideBts)
