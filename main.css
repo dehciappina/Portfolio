@@ -3,7 +3,6 @@
     --color-2:#5900FF;
     --color-text:#6300ff;
     --color-3:#fff619;
-    --color-4:#5800e6;
     --color-5: #2700B5;
 }
 
@@ -63,17 +62,42 @@ header {
     font-weight: 600;
     letter-spacing: 0.1rem;
     background-color: var(--color-1);
+    display: flex;
+} #top_bts span {
     padding: 2.5rem 0 1rem 0;
-} #top_bts a {
-    padding: 2.5rem 1rem 1rem 1.4rem;
+    width: 40%;
+    display: inline-block;
+    text-align: center;
+}  #top_bts span:hover {
+    background-color:rgba(0,0,0,0.06);
 }
 
-#about_me_window, #location_window {
-
-} #about_me_window {
-    
-} #location_window {
-
+#about_window {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+    width: 80%;
+    background: var(--color-1);
+    border: 0.1rem solid var(--color-2);
+    z-index: 3;
+    opacity: 0;
+    visibility: hidden;
+    transition:opacity 0.4s ease, visibility 0.4s ease;
+} #about_window h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 2rem 0 0 0;
+} #about_window h4 {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0.4rem 0 1.5rem 0;
+}  #about_window iframe {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    height: 60vh;
+    background-color:rgba(100,100,100,0.1);
 }
 
 #left_panel {
@@ -192,13 +216,25 @@ p {
     font-weight: 400;
 }
 
+.post_bullets {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0.4rem 0;
+} .post_bullets span {
+    background: rgba(100,100,100,0.1);
+    padding: 0.3rem 0.6rem;
+    margin: 0.2rem 0.4rem 0.2rem 0;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
 
 time {
     font-size: 1.1rem;
     font-weight: 500;
     font-style: italic;
 } .post h2 {
-    margin: 0.6rem 0 1rem 0;
+    margin: 0.3rem 0 0 0;
     font-size: 2rem;
     font-weight: 400;
     letter-spacing: 0.1rem;
@@ -243,7 +279,7 @@ time {
 } #hamburger > div > div > div {
     width: 20%;
     height: 100%;
-    background-color: var(--color-5);
+    background-color: #f8f8ff;
     transition: background-color 0.4s ease;
 } .menu_bts {
     width: 65%;
@@ -255,7 +291,7 @@ time {
     align-items: center;
     background-color: var(--color-2);
     border-radius: 0.2rem;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .whats_bt {
@@ -263,16 +299,16 @@ time {
     transition-delay: 0s;
 } .email_bt {
     transform: translateY(-320%) scale(1);
-    transition-delay: 0.04s;
+    transition-delay: 0.06s;
 } .github_bt {
     transform: translateY(-460%) scale(1);
-    transition-delay: 0.08s;
+    transition-delay: 0.12s;
 } .linkedin_bt {
     transform: translateY(-600%) scale(1);
-    transition-delay: 0.12s;
+    transition-delay: 0.18s;
 } .codepen_bt {
     transform: translateY(-740%) scale(1);
-    transition-delay: 0.16s;
+    transition-delay: 0.24s;
 }
 
 .showing_bts {
@@ -305,9 +341,10 @@ time {
 
 
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     :root {
-        --color-1: #0A0625;
+        --color-1: #08041A;
+        --color-2: #4900FF;
         --color-text:#f8f8ff;
         --color-5: #121221;
     }
@@ -324,7 +361,10 @@ time {
         font-weight: 300;
     }
 
-}
+    .post_bullets span {
+        font-weight: 400;
+    }
+} */
 
 
 
@@ -346,15 +386,22 @@ time {
 
 
 
-@media (min-width:120vh) {
+@media (min-width:100vh) {
     
     html {
         font-size: calc(12px + 0.3vw);
     }
 
     header {
-        position: absolute;
-        width: 100%;
+        position: fixed;
+        width: 61.8%;
+        top: 0;
+        left: 38.2%;
+    }
+
+    p {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
     }
 
     #im_andre span {
@@ -374,8 +421,8 @@ time {
         transform: inherit;
         will-change: unset;
         position: relative;
-        width: 3.5rem;
-        height: 3.5rem;
+        width: 3.2rem;
+        height: 3.2rem;
         background-color: var(--color-1);
     } #bts_container path, #bts_container polygon {
         fill: var(--color-2);
@@ -395,15 +442,29 @@ time {
     }
 
     .intro_padding_line {
-        border-top: 0.2rem solid var(--color-2);
         position: relative;
-        z-index: 10;
+        z-index: 1;
     }
     #language {
+        position: absolute;
         right: 0;
-        left: 91%;
         color: var(--color-2);
         background-color: unset;
+        width: unset;
+        padding: 1rem 2rem;
+    } #top_bts {
+        padding: 1rem;
+        position: relative;
+        left: 0;
+    } #top_bts span {
+        padding: 2.5rem 1rem 1rem 1.4rem;
+        transition:background-color 0.3s ease;
+    } #top_bts span:hover {
+        background-color:rgba(0,0,0,0.03);
+    }
+
+    .padding_line {
+        top: 3rem;
     }
 
     #intro_title {
@@ -431,15 +492,16 @@ time {
     }
 
     .post {
-        padding: 2rem;
+        padding: 3rem 2rem;
+    } .post h2 {
+        font-size: 2.5rem;
+        max-width: 36rem;
+    } .post p {
+        max-width: 38rem;
     }
 
     #intro_p {
         width: calc(22rem + 10vw);
-    }
-
-    #indicator {
-        margin-top: 1rem;
     }
 
     main {

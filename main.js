@@ -1,5 +1,7 @@
 
-let showingButtons = true;
+// Contact Buttons
+
+let showingButtons = false;
 
 const hamburguer = document.querySelector('#hamburger');
 const hamburguerDots = document.querySelectorAll('#hamburger > div > div > div');
@@ -39,21 +41,27 @@ function checkBts() {
 
 hamburguer.addEventListener('click', checkBts)
 
+if(!window.matchMedia('(min-width:100vh)').matches) {
 
-setTimeout(() => {
-    hideBts()
-}, 400);
-
-
-document.addEventListener('scroll', hideBts)
-
-
-
-
+    setTimeout(() => {
+        checkBts()
+    }, 600);
+    
+    document.addEventListener('scroll', hideBts)
+        
+}
 
 
 
 
+
+
+
+
+
+
+
+// ScrollReveal
 
 ScrollReveal().reveal('.post', {
     distance: '30px',
@@ -67,8 +75,8 @@ ScrollReveal().reveal('.post', {
 })
 
 ScrollReveal().reveal('.post_line', {
-    distance: window.innerWidth/5 + 'px',
-    duration: 1000,
+    distance: window.innerWidth/2 + 'px',
+    duration: 1200,
     reset: true,
     easing: 'ease',
     origin: 'left',
@@ -86,4 +94,125 @@ ScrollReveal().reveal('.post a', {
     viewOffset: {
         bottom: window.innerHeight/8,
     },
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// AJAX
+
+const AboutMeBt = document.querySelector('#about_me');
+const locationBt = document.querySelector('#my_location');
+const aboutWindow = document.querySelector('#about_window');
+
+let showingLocation = false;
+let showingAboutMe = false;
+
+function loadLocationWindow() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        aboutWindow.innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("GET", "location.html", true);
+    xhttp.send();
+}
+
+locationBt.addEventListener('click', function() {
+
+    if(showingLocation == false) {
+
+        locationBt.innerHTML = 'CLOSE'
+
+        aboutWindow.style.opacity = 1;
+        aboutWindow.style.visibility = 'visible';
+        loadLocationWindow()
+
+        showingLocation = true;
+        showingAboutMe = false;
+    } else {
+
+        locationBt.innerHTML = 'MY LOCATION'
+
+        aboutWindow.style.opacity = 0;
+        aboutWindow.style.visibility = 'hidden';
+
+        setTimeout(() => {
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                aboutWindow.innerHTML = this.responseText;
+              }
+            };
+            xhttp.open("GET", "dismiss.html", true);
+            xhttp.send();
+    
+            showingLocation = false;
+    
+        }, 1000);
+    }
+})
+
+
+
+function loadAboutMeWindow() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        aboutWindow.innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("GET", "about-me.html", true);
+    xhttp.send();
+}
+
+AboutMeBt.addEventListener('click', function() {
+
+    if(showingLocation == false) {
+
+        locationBt.innerHTML = 'CLOSE'
+
+        aboutWindow.style.opacity = 1;
+        aboutWindow.style.visibility = 'visible';
+        loadAboutMeWindow()
+
+        showingAboutMe = true;
+        showingLocation = false;
+    } else {
+
+        locationBt.innerHTML = 'MY LOCATION'
+
+        aboutWindow.style.opacity = 0;
+        aboutWindow.style.visibility = 'hidden';
+
+        setTimeout(() => {
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                aboutWindow.innerHTML = this.responseText;
+              }
+            };
+            xhttp.open("GET", "dismiss.html", true);
+            xhttp.send();
+    
+            showingAboutMe = false;
+    
+        }, 1000);
+    }
 })
