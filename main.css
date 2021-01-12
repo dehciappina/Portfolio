@@ -221,7 +221,7 @@ p {
     flex-flow: row wrap;
     margin: 0.4rem 0;
 } .post_bullets span {
-    background: rgba(100,100,100,0.1);
+    background:rgba(150,150,200,0.1);
     padding: 0.3rem 0.6rem;
     margin: 0.2rem 0.4rem 0.2rem 0;
     font-size: 0.6rem;
@@ -341,7 +341,7 @@ time {
 
 
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     :root {
         --color-1: #08041A;
         --color-2: #4900FF;
@@ -364,7 +364,7 @@ time {
     .post_bullets span {
         font-weight: 400;
     }
-} */
+}
 
 
 
