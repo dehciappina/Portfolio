@@ -68,8 +68,36 @@ header {
     width: 40%;
     display: inline-block;
     text-align: center;
+    transition: background-color 0.3s ease;
 }  #top_bts span:hover {
     background-color:rgba(0,0,0,0.06);
+}
+
+#top_bts span > div {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    right:0;
+    padding: 1rem 1rem 0 1rem;
+    background: var(--color-1);
+    z-index: 10;
+    display: block;
+    border-bottom: 0.1rem solid var(--color-2);
+    transform:translateY(0.5rem);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 1rem 2rem -1.6rem;
+} #top_bts span:hover > div {
+    opacity:1;
+    visibility:visible;
+    transform:translateY(1rem);
+} #top_bts span > div p {
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
 }
 
 #about_window {
@@ -161,7 +189,7 @@ main {
     font-size: 1.5rem;
     font-weight: 500;
     margin: 0.5rem 0 0 -5vw;
-    padding-left: 5vw;
+    padding: 0 5vw;
     line-height: 2.5rem;
 } .post a::before {
     content: '';
@@ -177,37 +205,27 @@ main {
     position: relative;
     border-top: 0.1rem solid var(--color-2);
 } .padding_line {
-    position: sticky;
-    top: 2.9rem;
     border-top: 0.1rem solid var(--color-2);
-    z-index: 2;
 }
 
-#hi {
-    color: var(--color-text);
-    position: absolute;
-    font-weight: 700;
-    font-size: clamp(1rem, 3rem, 13vw);
-    left: 0;
-    right: 80%;
-    margin-top: 2rem;
-    text-align: right;
-    padding-right: 2vw;
-    line-height: 3.3rem;
+#hi_desktop {
+    display: none;
 } #im_andre {
     font-size: clamp(1rem, 3rem, 13vw);
     font-weight: 700;
-    line-height: 3.3rem;
+    line-height: 2.8rem;
     display: block;
     position: relative;
 } #im_andre p {
     font-weight: 500;
     margin-top: 0.5rem;
-} #im_andre span {
+} #smile {
     position: absolute;
     transform: translate(calc(4vw + 1rem), -50%);
     color: var(--color-2);
     font-size: 4rem;
+} #hi_im {
+    font-size: 2.3rem;
 }
 
 p {
@@ -289,7 +307,7 @@ time {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-2);
+    background-color: #5900ff;
     border-radius: 0.2rem;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -341,7 +359,7 @@ time {
 
 
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     :root {
         --color-1: #08041A;
         --color-2: #4900FF;
@@ -364,7 +382,7 @@ time {
     .post_bullets span {
         font-weight: 400;
     }
-}
+} */
 
 
 
@@ -404,7 +422,7 @@ time {
         line-height: 1.8rem;
     }
 
-    #im_andre span {
+    #smile {
         right: unset;
         font-size: 7rem;
         top: unset;
@@ -423,7 +441,7 @@ time {
         position: relative;
         width: 3.2rem;
         height: 3.2rem;
-        background-color: var(--color-1);
+        background-color: var(--color-text);
     } #bts_container path, #bts_container polygon {
         fill: var(--color-2);
     }
@@ -453,12 +471,13 @@ time {
         width: unset;
         padding: 1rem 2rem;
     } #top_bts {
-        padding: 1rem;
         position: relative;
         left: 0;
     } #top_bts span {
-        padding: 2.5rem 1rem 1rem 1.4rem;
-        transition:background-color 0.3s ease;
+        padding: 1rem 2rem;
+        width: unset;
+        text-align: unset;
+        cursor: pointer;
     } #top_bts span:hover {
         background-color:rgba(0,0,0,0.03);
     }
@@ -470,13 +489,22 @@ time {
     #intro_title {
         top: 8rem;
         font-size: 6rem;
-    } #hi {
+    } #hi_desktop {
+        display: unset;
+        text-align: right;
+        position: absolute;
         color: #f8f8ff;
         font-size: 6rem;
         right: 61.8%;
+        left: 0;
         line-height: 6rem;
         margin-top: 10rem;
         padding-right: 1rem;
+        font-weight: 700;
+    } #hi_im {
+        font-size: unset;
+    } #hi_mobile {
+        display: none;
     }
 
     #intro_flex > * {
