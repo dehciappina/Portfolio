@@ -8,8 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
-    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
-
     <script src="libraries/scrollreveal.min.js" defer></script>
 
     <link rel="stylesheet" href="main.css">
@@ -18,7 +16,7 @@
 <body>
 
     <header>
-        <a id="language" href="#">EN</a>
+        <a id="language" href="#">EN | PT</a>
 
         <div id="top_bts">
             <span id="about_me">
@@ -36,16 +34,13 @@
                 MY LOCATION
 
                 <div>
-                    <p>Right now I'm living at <b>Taboão da Serra - São Paulo, Brazil.</b></p>
+                    <p>Right now I'm at <b>Taboão da Serra - São Paulo, Brazil.</b></p>
                 </div>
             </span>
         </div>
     </header>
 
-    <div id="about_window">
-        <div>EXIT</div>
-
-    </div>
+    <div class="left_img"></div>
 
     <div id="left_panel">
     </div>
@@ -153,6 +148,27 @@
         </a>
     </div>
 
+    <div id="e-mail_window">
+        <form id="my-form"
+            action="https://formspree.io/f/mknparjr"
+            method="POST"
+            >
+            <label>Name:</label>
+            <input name="name" type="text" required/>
+            <label>Email:</label>
+            <input type="email" name="email" />
+            <label>Message:</label>
+            <textarea name="message"></textarea>
+
+            <button id="my-form-button">SUBMIT</button>
+            <p id="my-form-status"></p>
+            </form>
+
+            <div id="close_form">
+                <div></div>
+            </div>
+    </div>
+
     <main>
         
         <div id="intro_flex">
@@ -165,7 +181,7 @@
 
             <div class="intro_padding_line"></div>
     
-            <p id="intro_p">I'm currently working at <strong>SimpleAds</strong> with <strong>digital advertising design</strong>.</p>
+            <p id="intro_p">Currently working with <strong>digital advertising design</strong> at <strong>SimpleAds</strong>.</p>
     
             <div id="indicator">
                 <div></div>
@@ -174,132 +190,94 @@
             </div>
         </div>
     
-        <div class="post" id="first_post" data-href="works/my-work-at-simpleads">
-
-            <time>2019 - current</time>
-
-            <h2>MY WORK AT <b>SIMPLEADS</b></h2>
-
-            <div class="post_bullets">
-                <span>GOOGLE WEB DESIGNER</span>
-                <span>CSS</span>
-                <span>WEB DESIGN</span>
-                <span>PHOTOSHOP</span>
-                <span>ADVERTISING DESIGN</span>
-            </div>
+        <div class="post" id="simpleads_post" data-href="works/my-work-at-simpleads">
             
-            <p>SimpleAds is an <b>adserver</b> that offers different solutions for advertisers and publishers.</p>
+            <div class="left_img"></div>
+
+            <div class="post_content">
+                <time>2019 - current</time>
+    
+                <h2>MY WORK AT <b>SIMPLEADS</b></h2>
+    
+                <div class="post_bullets">
+                    <span>GOOGLE WEB DESIGNER</span>
+                    <span>CSS</span>
+                    <span>WEB DESIGN</span>
+                    <span>PHOTOSHOP</span>
+                    <span>ADVERTISING DESIGN</span>
+                </div>
                 
-            <p>My job there is to <b>give creative support to advertisers</b>, making interactive or static ads on AIB standart sizes. I have worked on ads for <b>Ubisoft, Disney, Warner, Sony and many other clients</b>.</p>
+                <p>SimpleAds is an <b>adserver</b> that offers different solutions for advertisers and publishers.</p>
+                    
+                <p>My job there is to <b>give creative support to advertisers</b>, making interactive or static ads on AIB standart sizes. I have worked on ads for <b>Ubisoft, Disney, Warner, Sony and many other clients</b>.</p>
+            </div>
 
             <a href="works/my-work-at-simpleads">Know more</a>
         </div>
 
+
+
         <div class="padding_line post_line"></div>
     
-        <div class="post" data-href="works/hack-station-by-facebook">
-            <time>2018</time>
 
-            <h2>STUDYING AND WORKING AT <strong>HACK STATION, BY FACEBOOK</strong></h2>
 
-            <div class="post_bullets">
-                <span>HTML5</span>
-                <span>CSS3</span>
-                <span>JS</span>
-                <span>REACT</span>
-                <span>WEB DEVELOPMENT</span>
+        <div class="post" id="hack_station_post" data-href="works/hack-station-by-facebook">
+
+            <div class="left_img"></div>
+
+            <div class="post_content">
+                <time>2018</time>
+
+                <h2>STUDYING AND WORKING AT <strong>HACK STATION, BY FACEBOOK</strong></h2>
+    
+                <div class="post_bullets">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JS</span>
+                    <span>REACT</span>
+                    <span>WEB DEVELOPMENT</span>
+                </div>
+                
+                <p>In the half of 2018 I had the great opportunity to join the Hack Station, a project from Facebook for startup impulsion and investment on new talents of the brazilian web development scenario.</p>
+                
+                <p>The course was intensive and had the duration of one month and its mais content was about HTML5, CSS3, JavaScript, with introduction to more advanced subjects as React, back-end development with MongoDB, among others.</p>
             </div>
             
-            <p>In the half of 2018 I had the great opportunity to join the Hack Station, a project from Facebook for startup impulsion and investment on new talents of the brazilian web development scenario.</p>
-            
-            <p>The course was intensive and had the duration of one month and its mais content was about HTML5, CSS3, JavaScript, with introduction to more advanced subjects as React, back-end development with MongoDB, among others.</p>
-
             <a href="works/my-work-at-simpleads">Know more</a>
         </div>
 
+
+
         <div class="padding_line post_line"></div>
     
-        <div class="post" id="" data-href="works/work03">
-            <time>2018</time>
 
-            <h2><strong>PLAYMATCH,</strong> THE APP TO FIND GAMERS AROUND</h2>
 
-            <div class="post_bullets">
-                <span>WEB DEVELOPMENT</span>
-                <span>PROTOTYPE</span>
-                <span>UI DESIGN</span>
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JS</span>
+        <div class="post" id="playmatch_post" data-href="works/work03">
+
+            <div class="left_img"></div>
+            
+            <div class="post_content">
+                <time>2018</time>
+    
+                <h2><strong>PLAYMATCH,</strong> THE APP TO FIND GAMERS AROUND</h2>
+    
+                <div class="post_bullets">
+                    <span>WEB DEVELOPMENT</span>
+                    <span>PROTOTYPE</span>
+                    <span>UI DESIGN</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JS</span>
+                </div>
+                
+                <p>Playmatch is an idea I had back in 2017, about an social app made for electronic game players. In two years the idea became a text, which resulted in many visual indentities, which became a prototype and, finally, a project open for business. Here is the text I used for the business plan and crowdfunding campaign on Indiegogo, launched in March 2019.</p>
+                
+                <p>Just like the industries of music, television and movies, videogames are more than giants of intertainment - above all, they are an almost inexhaustible source of subjects and human interactions.</p>
             </div>
-            
-            <p>Playmatch is an idea I had back in 2017, about an social app made for electronic game players. In two years the idea became a text, which resulted in many visual indentities, which became a prototype and, finally, a project open for business. Here is the text I used for the business plan and crowdfunding campaign on Indiegogo, launched in March 2019.</p>
-            
-            <p>Just like the industries of music, television and movies, videogames are more than giants of intertainment - above all, they are an almost inexhaustible source of subjects and human interactions.</p>
 
             <a href="works/my-work-at-simpleads">Know more</a>
         </div>
 
-        <div class="padding_line post_line"></div>
-    
-        <div class="post" id="" data-href="works/work04">
-            <time>2019 - current</time>
-
-            <h2>MY WORK AT <b>SIMPLEADS</b></h2>
-            
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-
-            <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-
-            <a href="works/my-work-at-simpleads">Know more</a>
-        </div>
-
-        <div class="padding_line post_line"></div>
-    
-        <div class="post" id="" data-href="works/work05">
-            <time>2019 - current</time>
-
-            <h2>MY WORK AT <b>SIMPLEADS</b></h2>
-            
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-
-            <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-
-            <a href="works/my-work-at-simpleads">Know more</a>
-        </div>
-
-        <div class="padding_line post_line"></div>
-    
-        <div class="post" id="" data-href="works/work06">
-            <time>2019 - current</time>
-
-            <h2>MY WORK AT <b>SIMPLEADS</b></h2>
-            
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-
-            <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-
-            <a href="works/my-work-at-simpleads">Know more</a>
-        </div>
-
-        <div class="padding_line post_line"></div>
-    
-        <div class="post" id="" data-aos="fade-up" data-href="works/work07">
-            <time>2019 - current</time>
-
-            <h2>MY WORK AT <b>SIMPLEADS</b></h2>
-            
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-
-            <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-
-            <a href="works/my-work-at-simpleads">Know more</a>
-        </div>
     </main>
-    
-    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script> -->
 </body>
 </html>

@@ -100,34 +100,6 @@ header {
     margin-bottom: 1rem;
 }
 
-#about_window {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 10%;
-    width: 80%;
-    background: var(--color-1);
-    border: 0.1rem solid var(--color-2);
-    z-index: 3;
-    opacity: 0;
-    visibility: hidden;
-    transition:opacity 0.4s ease, visibility 0.4s ease;
-} #about_window h3 {
-    font-size: 1.5rem;
-    text-align: center;
-    margin: 2rem 0 0 0;
-} #about_window h4 {
-    font-size: 1rem;
-    text-align: center;
-    margin: 0.4rem 0 1.5rem 0;
-}  #about_window iframe {
-    display: block;
-    margin: 0 auto;
-    width: 90%;
-    height: 60vh;
-    background-color:rgba(100,100,100,0.1);
-}
-
 #left_panel {
     border-right: 0.1rem solid var(--color-2);
     background-color: unset;
@@ -144,26 +116,6 @@ main {
     padding-top: 2rem;
     padding-bottom: 20rem;
 }
-
-
-/* #right_bottom_panel {
-    background-color: var(--color-3);
-    mix-blend-mode: color-burn;
-    position: fixed;
-    right:0;
-    bottom:0;
-    top:85.4%;
-    height: 14.6%;
-    left: calc(20% - 0.15rem);
-    z-index: 9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.4rem;
-    font-weight: 600;
-    letter-spacing: 0.1rem;
-    pointer-events: none;
-} */
 
 #intro_flex > * {
     padding: 0 5vw;
@@ -223,9 +175,9 @@ main {
     position: absolute;
     transform: translate(calc(4vw + 1rem), -50%);
     color: var(--color-2);
-    font-size: 4rem;
+    font-size: 3.5rem;
 } #hi_im {
-    font-size: 2.3rem;
+    font-size: 2.6rem;
 }
 
 p {
@@ -270,6 +222,7 @@ time {
     height: 20vw;
     display: flex;
     justify-content: center;
+    z-index: 2;
 } #bts_container svg {
     width: 45%;
     height: 45%;
@@ -334,9 +287,77 @@ time {
     will-change: transform;
 }
 
+#e-mail_window {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 20%;
+    background: var(--color-2);
+    z-index: 2;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+} form {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px 10vh 20px;
+} label {
+    color: white;
+    font-weight: 500;
+} input {
 
+} textarea {
+    min-height: 120px;
+} input, textarea {
+    padding: 10px;
+    margin: 4px 0 12px 0;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+    border: none;
+    background: rgba(0,0,0,0.4);
+    color: white;
+    font-size: 16px;
+} #my-form-button {
+    height: 40px;
+    border: none;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    color: var(--color-2);
+} #my-form-status {
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 10px;
+    letter-spacing: 1px;
+} #close_form {
+    width: 100%;
+    background: rgba(0,0,0,0.2);
+    height: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} #close_form div {
+    transform: rotate(45deg);
+    border-right: 0.4rem solid white;
+    border-bottom: 0.4rem solid white;
+    width: 0.6rem;
+    height: 0.6rem;
+}
 
+@keyframes email_sent {
+    0% {
+        background: rgba(0,0,0,0.2);
+    }
 
+    50% {
+        background: rgba(0,0,0,0.4);
+    }
+
+    100% {
+        background: rgba(0,0,0,0.2);
+    }
+}
 
 
 
@@ -435,13 +456,17 @@ time {
         height: 7rem;
         justify-content: space-evenly;
         align-items: center;
-    } #bts_container .showing_bts {
+    } .showing_bts {
         transform: inherit;
         will-change: unset;
         position: relative;
         width: 3.2rem;
         height: 3.2rem;
-        background-color: var(--color-text);
+        background-color: white;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    } .showing_bts:hover {
+        background-color: #ddf;
     } #bts_container path, #bts_container polygon {
         fill: var(--color-2);
     }
@@ -450,6 +475,9 @@ time {
         background-color: var(--color-2);
         right: 61.8%;
         border-right: unset;
+        /* background-image: url(assets/intro_img.gif);
+        background-size: cover;
+        background-blend-mode: overlay; */
     }
 
     #right_bottom_panel {
@@ -520,12 +548,20 @@ time {
     }
 
     .post {
+        display: block;
+        position: relative;
         padding: 3rem 2rem;
     } .post h2 {
         font-size: 2.5rem;
         max-width: 36rem;
     } .post p {
         max-width: 38rem;
+    } .post a {
+        margin: 0.5rem 0 0 -2rem;
+        padding: 0.2rem 2rem;
+        transition: background-color 0.2s ease;
+    } .post a:hover {
+        background-color: rgba(165,145,215,0.15);
     }
 
     #intro_p {
@@ -537,7 +573,35 @@ time {
         padding-top: 10rem;
     }
     
-    
+    #top_bts span > div {
+        width: 65%;
+        padding: 2rem 2rem 1rem 2rem;
+        box-shadow: 0 1rem 3rem -2.5rem #666;
+        border-right: 0.1rem solid var(--color-2);
+        border-radius: 0 0 0.5rem 0;
+        cursor: default;
+    }
+
+    .left_img {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: -38.2vw;
+        top: 0;
+        width: 62.5%;
+        height: 100%;
+        mix-blend-mode: lighten;
+        background-size: cover;
+        background-position: center;
+        /* -webkit-mask-image: linear-gradient(transparent, white 25%, white 75%, transparent); */
+    } #simpleads_post .left_img {
+        background-image: url(assets/simpleads_img.jpg);
+    } #hack_station_post .left_img {
+        background-image: url(assets/hack_station_img.jpg);
+    } #playmatch_post .left_img {
+        background-image: url(assets/playmatch_img.jpg);
+    }
+
 }
 
 

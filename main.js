@@ -41,6 +41,7 @@ function checkBts() {
 
 hamburguer.addEventListener('click', checkBts)
 
+
 if(!window.matchMedia('(min-width:100vh)').matches) {
 
     setTimeout(() => {
@@ -50,6 +51,25 @@ if(!window.matchMedia('(min-width:100vh)').matches) {
     document.addEventListener('scroll', hideBts)
         
 }
+
+let emailShown = false;
+const emailBt = document.querySelector('.email_bt');
+const emailWindow = document.querySelector('#e-mail_window');
+const closeForm = document.querySelector('#close_form');
+
+function toggleEmail() {
+    if(emailShown == false) {
+        emailShown = true;
+        emailWindow.style.transform = "translateY(0)";
+    } else {
+        emailShown = false;
+        emailWindow.style.transform = "translateY(100%)";
+    }
+}
+
+emailBt.addEventListener('click', toggleEmail);
+closeForm.addEventListener('click', toggleEmail);
+
 
 
 
@@ -63,7 +83,7 @@ if(!window.matchMedia('(min-width:100vh)').matches) {
 
 // ScrollReveal
 
-ScrollReveal().reveal('.post', {
+ScrollReveal().reveal('.post_content', {
     distance: '30px',
     duration: 1400,
     // reset: true,
@@ -95,3 +115,88 @@ ScrollReveal().reveal('.post a', {
         bottom: window.innerHeight/8,
     },
 })
+
+ScrollReveal().reveal('.left_img', {
+    distance: window.innerWidth * 0.03 + 'px',
+    duration: 1200,
+    reset: true,
+    easing: 'ease',
+    origin: 'top',
+    viewOffset: {
+        top: window.innerHeight/2,
+        bottom: window.innerHeight/1.8,
+    },
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// E-MAIL FORM AJAX
+
+window.addEventListener("DOMContentLoaded", function() {
+
+    // get the form elements defined in your form HTML above
+    
+    var form = document.getElementById("my-form");
+    var button = document.getElementById("my-form-button");
+    var status = document.getElementById("my-form-status");
+
+    // Success and Error functions for after the form is submitted
+    
+    function success() {
+    form.reset();
+    button.style = "display: none ";
+    status.innerHTML = "E-mail sent. Thanks!";
+    closeForm.style.animation = 'email_sent 0.8s ease 3';
+    }
+
+    function error() {
+    status.innerHTML = "Oops! There was a problem.";
+    }
+
+    // handle the form submission event
+
+    form.addEventListener("submit", function(ev) {
+    ev.preventDefault();
+    var data = new FormData(form);
+    ajax(form.method, form.action, data, success, error);
+    });
+});
+
+// helper function for sending an AJAX request
+
+function ajax(method, url, data, success, error) {
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = function() {
+    if (xhr.readyState !== XMLHttpRequest.DONE) return;
+    if (xhr.status === 200) {
+        success(xhr.response, xhr.responseType);
+    } else {
+        error(xhr.status, xhr.response, xhr.responseType);
+    }
+    };
+    xhr.send(data);
+}
