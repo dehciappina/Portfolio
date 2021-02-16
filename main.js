@@ -70,6 +70,24 @@ function toggleEmail() {
 emailBt.addEventListener('click', toggleEmail);
 closeForm.addEventListener('click', toggleEmail);
 
+document.body.addEventListener('keyup', function(e) {
+    if(e.key === "Escape") {
+        emailShown = true;
+        toggleEmail()
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -86,11 +104,11 @@ closeForm.addEventListener('click', toggleEmail);
 ScrollReveal().reveal('.post_content', {
     distance: '30px',
     duration: 1400,
-    // reset: true,
+    reset: true,
     easing: 'ease',
     viewOffset: {
-        bottom: window.innerHeight/1.8,
-        top: window.innerHeight/4,
+        bottom: window.innerHeight/3,
+        top: window.innerHeight/6,
     },
 })
 
@@ -106,18 +124,19 @@ ScrollReveal().reveal('.post_line', {
 })
 
 ScrollReveal().reveal('.post a', {
-    distance: window.innerWidth * 0.05 + 'px',
-    duration: 1000,
-    // reset: true,
+    distance: window.innerWidth * 0.03 + 'px',
+    duration: 2000,
+    reset: true,
     easing: 'ease',
     origin: 'bottom',
     viewOffset: {
-        bottom: window.innerHeight/8,
+        bottom: window.innerHeight/15,
+        top: window.innerHeight/3,
     },
 })
 
 ScrollReveal().reveal('.left_img', {
-    duration: 1200,
+    duration: 2000,
     reset: true,
     easing: 'ease',
     origin: 'top',
