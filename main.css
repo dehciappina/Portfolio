@@ -177,6 +177,9 @@ main {
     transform: translate(calc(4vw + 1rem), -50%);
     color: var(--color-2);
     font-size: 3.5rem;
+} #smile span {
+    width: 1rem;
+    display: inline-block;
 } #hi_im {
     font-size: 2.6rem;
 }
@@ -463,7 +466,9 @@ time {
         right: unset;
         font-size: 7rem;
         top: unset;
-    }
+    } #smile span {
+        width: 2rem;
+    } 
 
     #hamburger {
         display: none;
@@ -509,12 +514,16 @@ time {
         z-index: 1;
     }
     #language {
-        position: absolute;
-        right: 0;
-        color: var(--color-2);
-        background-color: unset;
+        position: fixed;
+        left: 0;
         width: unset;
-        padding: 1rem 2rem;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem;
+        background-color: rgba(89, 0, 255, 0.6);
+        backdrop-filter: blur(6px);
+        transition: background-color 0.3s ease;
+    } #language:hover {
+        background-color: rgba(89, 0, 255, 1);
     } #top_bts {
         position: relative;
         left: 0;

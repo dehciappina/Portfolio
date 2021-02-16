@@ -77,7 +77,15 @@ document.body.addEventListener('keyup', function(e) {
     }
 });
 
+const eyes = document.querySelector('#smile span')
 
+
+setInterval(() => {
+    eyes.innerHTML = ';'
+    setTimeout(() => {
+        eyes.innerHTML = ':'
+    }, Math.random() * 3000);
+}, Math.random() * 3000);
 
 
 
