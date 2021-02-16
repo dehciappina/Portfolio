@@ -381,7 +381,7 @@ time {
     bottom: 0;
     z-index: 10;
     background-image: url(assets/grain.gif);
-    background-size: 6rem;
+    background-size: 3rem;
     opacity: 0.2;
     pointer-events: none;
 }
@@ -416,7 +416,7 @@ time {
         mix-blend-mode: difference;
     }
 
-    body #grain {
+    #grain {
         opacity:0.15;
     }
 
@@ -651,6 +651,11 @@ time {
     } #my-form-button {
         padding: 2vh 0;
         font-size: 4vh;
+    }
+
+
+    #grain {
+        background-size: 6rem;
     }
 }
 
