@@ -101,7 +101,7 @@ ScrollReveal().reveal('.post_line', {
     easing: 'ease',
     origin: 'left',
     viewOffset: {
-        bottom: window.innerHeight/7,
+        bottom: 0,
     },
 })
 
@@ -117,7 +117,6 @@ ScrollReveal().reveal('.post a', {
 })
 
 ScrollReveal().reveal('.left_img', {
-    distance: window.innerWidth * 0.03 + 'px',
     duration: 1200,
     reset: true,
     easing: 'ease',
@@ -165,14 +164,23 @@ window.addEventListener("DOMContentLoaded", function() {
     // Success and Error functions for after the form is submitted
     
     function success() {
-    form.reset();
-    button.style = "display: none ";
-    status.innerHTML = "E-mail sent. Thanks!";
-    closeForm.style.animation = 'email_sent 0.8s ease 3';
+        form.reset();
+        button.style = "display: none ";
+        if(document.documentElement.lang == "en") {
+            status.innerHTML = "E-mail sent. Thanks!";
+        } else {
+            status.innerHTML = "E-mail enviado. Obrigado!";
+        }
+        closeForm.style.animation = 'email_sent 0.8s ease 3';
     }
 
     function error() {
-    status.innerHTML = "Oops! There was a problem.";
+        
+        if(document.documentElement.lang == "en") {
+            status.innerHTML = "Oops! There was a problem.";
+        } else {
+            status.innerHTML = "Opa! Houve um problema.";
+        }
     }
 
     // handle the form submission event
