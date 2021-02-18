@@ -77,17 +77,30 @@ document.body.addEventListener('keyup', function(e) {
     }
 });
 
-const eyes = document.querySelector('#smile span')
+const eyes = document.querySelector('#eyes')
 
 
 setInterval(() => {
     eyes.innerHTML = ';'
     setTimeout(() => {
         eyes.innerHTML = ':'
-    }, Math.random() * 3000);
-}, Math.random() * 3000);
+    }, Math.random() * 5000);
+}, Math.random() * 5000);
 
 
+
+const mouth = document.querySelector('#mouth')
+
+
+setInterval(() => {
+    mouth.innerHTML = ')'
+    setTimeout(() => {
+        mouth.innerHTML = 'P'
+        setTimeout(() => {
+            mouth.innerHTML = 'D'
+        }, Math.random() * 5000);
+    }, Math.random() * 5000);
+}, Math.random() * 5000);
 
 
 
